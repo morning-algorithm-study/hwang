@@ -6,26 +6,37 @@ const commends = [
 ];
 
 function solution(array, commends) {
-  var answer = [];
+  const answer = [];
   for (let commend of commends) {
     const slicedArray = array.slice(commend[0] - 1, commend[1]);
-    console.log(slicedArray);
+    // console.log(slicedArray);
     const sortedArray = slicedArray.sort((a, b) => {
-      console.log(a, b);
-      console.log(a - b);
-      console.log('------');
+      // console.log(a, b);
+      // console.log(a - b);
+      // console.log('------');
       return a - b;
     });
-    console.log(sortedArray);
+    // console.log(sortedArray);
     const K = sortedArray[commend[2] - 1];
     // console.log(K);
-    console.log('==============================');
+    // console.log('==============================');
+    answer.push(K);
+  }
+  return answer;
+}
+
+//위에 걸 간결하게 한 함수
+function solution2(array, commends) {
+  const answer = [];
+  for (let commend of commends) {
+    const K = array.slice(commend[0] - 1, commend[1]).sort((a, b) => a - b)[commend[2] - 1];
     answer.push(K);
   }
   return answer;
 }
 
 console.log(solution(array, commends));
+console.log(solution2(array, commends));
 /*
 5263
 2563
