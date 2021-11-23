@@ -1,9 +1,9 @@
-const s = 'baabaa';
+const s = 'bathhtabaevvea';
 
 //효율성 테스트 실패
 function solution(s) {
   var answer = -1;
-  const regex = /([a-z])\1/g;
+  const regex = /([a-z])\1/g; // (/[a-z]+/g)
   while (s.length > 0) {
     if (regex.test(s)) {
       s = s.replace(regex, '');
